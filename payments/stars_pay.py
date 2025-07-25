@@ -14,10 +14,10 @@ def register_payment(bot, payments):
     def success(mess):
         if mess.successful_payment.invoice_payload == "MATRIZA":
             try:
-                bot.refund_star_payment(mess.chat.id, mess.successful_payment.telegram_payment_charge_id)
+              
                 text = 'Спасибо за покупку! 💫\nНадеюсь, гайд даст тебе не просто информацию, а настоящие инсайты — про себя, свои сценарии и точки роста.\n\nЕсли что-то захочется обсудить или уточнить — всегда можно написать: @lillbreathyy\n\nПусть знания пойдут в дело 🌿'
                 bot.send_message(mess.chat.id, text)
-                with open("pay.db", "rb") as f:  # ← путь к файлу
+                with open("matriza.pdf", "rb") as f:  # ← путь к файлу
                     bot.send_document(mess.chat.id, f)
                 username = mess.from_user.username
                 tg_id = mess.from_user.id
@@ -34,10 +34,10 @@ def register_payment(bot, payments):
                 bot.send_message(mess.chat.id, text)
         if mess.successful_payment.invoice_payload =='FINKOD':
             try:
-                bot.refund_star_payment(mess.chat.id, mess.successful_payment.telegram_payment_charge_id)
+                
                 text = 'Спасибо за покупку! 💫\nНадеюсь, гайд даст тебе не просто информацию, а настоящие инсайты — про себя, свои сценарии и точки роста.\n\nЕсли что-то захочется обсудить или уточнить — всегда можно написать: @lillbreathyy\n\nПусть знания пойдут в дело 🌿'
                 bot.send_message(mess.chat.id, text)
-                with open("orders.db", "rb") as f:  # ← путь к файлу
+                with open("finkod.pdf", "rb") as f:  # ← путь к файлу
                     bot.send_document(mess.chat.id, f)
                 username = mess.from_user.username
                 tg_id = mess.from_user.id
